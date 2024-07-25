@@ -59,7 +59,7 @@ Your index.html file should load, and it should have access to the cricket.wav f
 
 
 ## Picture: for refrence
-## Settings -> Pages -> Source -> main -> /(root) -> Save -> wait for a while
+## Settings -> Pages -> Source -> main -> /(root) -> Save -> wait for a while -> on browser type 'https://greenmoon.github.io/fascia_/'
 ![image](https://github.com/user-attachments/assets/e69f28d0-6876-439f-8af9-fcf475691604)
 
 
