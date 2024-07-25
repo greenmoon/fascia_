@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Myofascial Release Program</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 20px; /* Adjust this value to move the content further up or down */
+            font-family: 'Consolas', monospace;
+        }
+        #startButton {
+            padding: 20px 40px;
+            font-size: 24px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .status-line {
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            margin-bottom: 5px;
+        }
+        .status-label {
+            min-width: 120px;
+            display: inline-block;
+        }
+        #waitSecValue {
+            font-size: 200px;
+            color: red;
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>FASCIA V01 kevin</h1>
+    <div id="status">Self Myofascial Release since 2024.07.16</div>
+    <div id="waitSecValue"></div>
+    <button id="startButton">CLICK STARTING</button>
+    <audio id="cricketSound" src="cricket.wav"></audio>
+    <script>
+        let loopCount = 0;
+        const cricketSound = document.getElementById('cricketSound');
+        //cricketSound.volume = 0.25;  // Set volume to 25%
+        let endTime;
+        let countdownInterval;
+        let timerStartTime;
+        let pausedTime = 0;
 
+        function playCricketSound(times = 1, interval = 500) {
+            let count = 0;
+            const playSound = () => {
+                if (count < times) {
+                    cricketSound.currentTime = 0;
+                    cricketSound.play().then(() => {
+                        console.log('Cricket sound played');
+                    }).catch(error => {
+                        //alert('JB> no playing sound');
+                        console.error('Error playing sound:', error);
+                    });
+                    count++;
+                    setTimeout(playSound, interval);
+                }
+            };
+            playSound();
+        }
+
+        function startCountdown(duration, loopCount, display) {
+            let timer = duration;
+            timerStartTime = Date.now();
+            countdownInterval = setInterval(() => {
+                if (document.hidden) {
+                    pausedTime = Date.now() - timerStartTime;
+                    clearInterval(countdownInterval);
+                    return;
+                }
+
+                if (pausedTime > 0) {
+                    timer -= Math.floor(pausedTime / 1000);
+                    pausedTime = 0;
+                    timerStartTime = Date.now();
+                }
+
+                const seconds = parseInt(timer % 60, 10);
+                const currentTime = new Date().toTimeString().split(' ')[0];
+                document.getElementById('waitSecValue').textContent = `${seconds}`;
+
+                display.innerHTML = `
+                    <div class="status-line"><span class="status-label">Step:</span> <span>${loopCount}/60</span></div>
+                    <div class="status-line"><span class="status-label">Current_time:</span> <span>${currentTime}</span></div>
+                    <div class="status-line"><span class="status-label">End_time:</span> <span>${endTime}</span></div>
+                `;
+
+                if (--timer < 0) {
+                    clearInterval(countdownInterval);
+                    if (loopCount < 59) {
+                        showAlert();
+                    } else {
+                        //alert('Alert> debug if not calling showAlert()');
+                        playCricketSound(60, 1000); // Play cricket sound 60 times, 1 second apart
+                        document.getElementById('status').innerHTML = '<div class="status-line"><span class="status-label">Total time out:</span> <span>Alerting Finished</span></div>';
+                    }
+                }
+            }, 1000);
+        }
+
+        function showAlert() {
+            //alert('Alert> calling showAlter() ');
+            playCricketSound();
+            loopCount++;
+            startCountdown(59, loopCount, document.getElementById('status'));
+        }
+
+        function calculateEndTime() {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() + 60);
+            endTime = now.toTimeString().split(' ')[0]; // Get HH:MM:SS format
+        }
+
+        document.getElementById('startButton').addEventListener('click', () => {
+            alert('Please set your device volume to 25% for optimal experience.');
+          
+            calculateEndTime();
+            playCricketSound(1, 1000); // Play cricket sound 1 time, 1 second apart
+            setTimeout(() => {
+                showAlert();
+                document.getElementById('startButton').style.display = 'none';
+            }, 1000); // Delay to ensure the first sound is heard
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && countdownInterval) {
+                const remainingTime = parseInt(document.getElementById('waitSecValue').textContent, 10);
+                startCountdown(remainingTime, loopCount, document.getElementById('status'));
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+ 
