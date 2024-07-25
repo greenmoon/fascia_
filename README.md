@@ -16,8 +16,11 @@ Click the "Create repository" button.
 ## Step 2: Upload Your Files
 Upload Files:
 Go to your new repository on GitHub.
+
 Click on the "Add file" button and select "Upload files".
+
 Drag and drop your index.html and cricket.wav files into the upload area.
+
 Commit the changes by clicking the "Commit changes" button at the bottom of the page.
 
 ## Step 3: Enable GitHub Pages
@@ -28,19 +31,22 @@ Enable GitHub Pages:
 
 Scroll down to the "Pages" section in the left sidebar.
 Under "Source", select the branch you want to use (usually main) and the root directory (/).
+
 Click "Save".
 Wait for the Site to Build:
 
 GitHub will take a few minutes to build your site. Once it's done, you’ll see a URL where your site is hosted, usually something like https://<username>.github.io/<repository-name>/.
+
 Example URL
 If your username is exampleuser and your repository is named my-sound-project, your GitHub Pages URL will likely be: https://exampleuser.github.io/my-sound-project/.
-<br>
+ 
 ## Step 4: Access Your Site
 Visit the URL:
-Open the URL provided by GitHub Pages in your web browser.
-Your index.html file should load, and it should have access to the cricket.wav file.
 
-<br>
+Open the URL provided by GitHub Pages in your web browser.
+
+Your index.html file should load, and it should have access to the cricket.wav file.
+ 
 
 ## Example HTML File
 Here is the content of the index.html file for reference:
