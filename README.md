@@ -2,7 +2,7 @@
 
 To host your HTML file and the cricket.wav file on GitHub Pages, you need to create a GitHub repository, upload your files, and then enable GitHub Pages for your repository. Here’s a step-by-step guide to do this:
 
-Step 1: Create a GitHub Repository
+## Step 1: Create a GitHub Repository
 Log in to GitHub:
 
 Go to GitHub and log in with your account.
@@ -12,13 +12,15 @@ Click on the + icon in the upper-right corner and select "New repository".
 Name your repository (e.g., my-sound-project).
 Choose "Public" for the repository visibility.
 Click the "Create repository" button.
-Step 2: Upload Your Files
+
+## Step 2: Upload Your Files
 Upload Files:
 Go to your new repository on GitHub.
 Click on the "Add file" button and select "Upload files".
 Drag and drop your index.html and cricket.wav files into the upload area.
 Commit the changes by clicking the "Commit changes" button at the bottom of the page.
-Step 3: Enable GitHub Pages
+
+## Step 3: Enable GitHub Pages
 Go to Repository Settings:
 
 Click on the "Settings" tab in your repository.
@@ -32,11 +34,15 @@ Wait for the Site to Build:
 GitHub will take a few minutes to build your site. Once it's done, you’ll see a URL where your site is hosted, usually something like https://<username>.github.io/<repository-name>/.
 Example URL
 If your username is exampleuser and your repository is named my-sound-project, your GitHub Pages URL will likely be: https://exampleuser.github.io/my-sound-project/.
-Step 4: Access Your Site
+<br>
+## Step 4: Access Your Site
 Visit the URL:
 Open the URL provided by GitHub Pages in your web browser.
 Your index.html file should load, and it should have access to the cricket.wav file.
-Example HTML File
+
+<br>
+
+## Example HTML File
 Here is the content of the index.html file for reference:
 
 html
