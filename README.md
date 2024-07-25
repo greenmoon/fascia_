@@ -1,20 +1,28 @@
 # fascia_
 
-To host your HTML file and the cricket.wav file on GitHub Pages, you need to create a GitHub repository, upload your files, and then enable GitHub Pages for your repository. Here’s a step-by-step guide to do this:
+To host your HTML file and the cricket.wav file on GitHub Pages, you need to create a GitHub repository, 
+
+upload your files, and then enable GitHub Pages for your repository. 
+
+Here’s a step-by-step guide to do this:
 
 ## Step 1: Create a GitHub Repository
 Log in to GitHub:
 
 Go to GitHub and log in with your account.
+
 Create a New Repository:
 
 Click on the + icon in the upper-right corner and select "New repository".
 Name your repository (e.g., my-sound-project).
+
 Choose "Public" for the repository visibility.
+
 Click the "Create repository" button.
 
 ## Step 2: Upload Your Files
 Upload Files:
+
 Go to your new repository on GitHub.
 
 Click on the "Add file" button and select "Upload files".
@@ -27,6 +35,7 @@ Commit the changes by clicking the "Commit changes" button at the bottom of the 
 Go to Repository Settings:
 
 Click on the "Settings" tab in your repository.
+
 Enable GitHub Pages:
 
 Scroll down to the "Pages" section in the left sidebar.
