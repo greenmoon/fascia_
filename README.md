@@ -55,6 +55,15 @@ Visit the URL:
 Open the URL provided by GitHub Pages in your web browser.
 
 Your index.html file should load, and it should have access to the cricket.wav file.
+
+
+
+## Picture: for refrence
+![image](https://github.com/user-attachments/assets/e69f28d0-6876-439f-8af9-fcf475691604)
+
+
+
+
  
 
 ## Example HTML File
