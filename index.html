@@ -45,7 +45,7 @@
     </style>
 </head>
 <body>
-    <h1>FASCIA V01 kevin</h1>
+    <h1>FASCIA V02 Kevin</h1>
     <div id="status">Self Myofascial Release since 2024.07.16</div>
     <div id="waitSecValue"></div>
     <button id="startButton">CLICK STARTING</button>
@@ -130,8 +130,7 @@
         }
 
         document.getElementById('startButton').addEventListener('click', () => {
-            alert('Please set your device volume to 25% for optimal experience.');
-          
+            //alert('Please set your device volume to 25% for optimal experience.');
             calculateEndTime();
             playCricketSound(1, 1000); // Play cricket sound 1 time, 1 second apart
             setTimeout(() => {
