@@ -70,8 +70,8 @@ Your index.html file should load, and it should have access to the cricket.wav f
 ## Example HTML File
 Here is the content of the index.html file for reference:
 
-html
-Copy code
+<div> 
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,6 +219,9 @@ Copy code
     </script>
 </body>
 </html>
+
+</div>
+
 Notes:
 The above code assumes that your HTML and cricket.wav files are in the same directory.
 Make sure the filenames match exactly, including the extension.
