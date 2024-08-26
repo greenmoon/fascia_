@@ -53,11 +53,11 @@
     </style>
 </head>
 <body>
-    <h1>FASCIA V07 K</h1>
+    <h1>FASCIA V08 30 sec K</h1>
     <div id="status">Self Myofascial Release since 2024.07.16</div>
     <div id="stepCount"></div>
     <div id="waitSecValue"></div>
-    <button id="startButton">CLICK STARTING</button>
+    <button id="startButton">CLICK STARTING (30 sec / cycle)</button>
     <audio id="cricketSound" src="cricket.wav"></audio>
     <script>
         let loopCount = 0;
@@ -127,7 +127,8 @@
         function showAlert() {
             playCricketSound();
             loopCount++;
-            startCountdown(59, loopCount, document.getElementById('status'));
+            //startCountdown(59, loopCount, document.getElementById('status'));
+            startCountdown(29, loopCount, document.getElementById('status'));
         }
 
         function calculateEndTime() {
@@ -157,6 +158,9 @@
     </script>
 </body>
 </html>
+
+
+
 
 
 <!-- V03
